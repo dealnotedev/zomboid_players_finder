@@ -50,7 +50,7 @@ public class ZomboidPlayerFinder {
         }
     }
 
-    public List<IsoPlayer> findAll(String databasePath) {
+    public List<IsoPlayer> findAll(String databasePath) throws SQLException, IOException {
         int width = 512;
         int height = 512;
 
@@ -62,11 +62,15 @@ public class ZomboidPlayerFinder {
 
         List<IsoPlayer> isoPlayers = new ArrayList<>();
 
-        try {
-            final Connection connection = PZSQLUtils.getConnection(databasePath);
-            final PreparedStatement statement = connection.prepareStatement("SELECT data,worldversion,x,y,z,isDead,name,username FROM networkPlayers");
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
 
-            final ResultSet resultSet = statement.executeQuery();
+        try {
+            connection = PZSQLUtils.getConnection(databasePath);
+            statement = connection.prepareStatement("SELECT data,worldversion,x,y,z,isDead,name,username FROM networkPlayers");
+
+            resultSet = statement.executeQuery();
             while (resultSet.next()){
                 final PlayerData data = new PlayerData();
 
@@ -78,11 +82,23 @@ public class ZomboidPlayerFinder {
                 isoPlayer.load(data.m_byteBuffer, IsoWorld.getWorldVersion());
                 isoPlayers.add(isoPlayer);
             }
-        } catch (SQLException | IOException e) {
-            e.printStackTrace();
+        } finally {
+            closeQuietly(resultSet);
+            closeQuietly(statement);
+            closeQuietly(connection);
         }
 
         return isoPlayers;
+    }
+
+    private static void closeQuietly(AutoCloseable connection){
+        if(connection != null){
+            try {
+                connection.close();
+            } catch (Exception ignored) {
+
+            }
+        }
     }
 
     private static final ThreadLocal<byte[]> TL_Bytes = ThreadLocal.withInitial(() -> new byte[1024]);
