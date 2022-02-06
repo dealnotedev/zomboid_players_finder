@@ -38,13 +38,10 @@ public class ZomboidPlayerFinder {
         HairStyles.instance = new HairStyles();
         LuaManager.env = new KahluaTableImpl(new LinkedHashMap<>());
 
-        Class<WorldDictionary> worldDictionaryClass = WorldDictionary.class;
         try {
-            DictionaryData dictionaryData = new DictionaryData();
-
-            Field data = worldDictionaryClass.getDeclaredField("data");
+            final Field data = WorldDictionary.class.getDeclaredField("data");
             data.setAccessible(true);
-            data.set(null, dictionaryData);
+            data.set(null, new DictionaryData());
         } catch (NoSuchFieldException | IllegalAccessException e) {
             throw new IllegalStateException();
         }
