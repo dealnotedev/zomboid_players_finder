@@ -26,6 +26,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ZomboidPlayerFinder {
@@ -57,44 +58,52 @@ public class ZomboidPlayerFinder {
         survivorDesc.getHumanVisual().setSkinTextureIndex(0);
         survivorDesc.getHumanVisual().setSkinTextureName("Text");
 
-        List<IsoPlayer> isoPlayers = new ArrayList<>();
-
-        Connection connection = null;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
+        final List<IsoPlayer> players = new ArrayList<>();
+        final Closeables closeables = new Closeables();
 
         try {
-            connection = PZSQLUtils.getConnection(databasePath);
-            statement = connection.prepareStatement("SELECT data,worldversion,x,y,z,isDead,name,username FROM networkPlayers");
+            final Connection connection = PZSQLUtils.getConnection(databasePath);
+            closeables.register(connection);
 
-            resultSet = statement.executeQuery();
+            final PreparedStatement statement = connection.prepareStatement("SELECT data,worldversion,x,y,z,isDead,name,username FROM networkPlayers");
+            closeables.register(statement);
+
+            final ResultSet resultSet = closeables.register(statement.executeQuery());
+
             while (resultSet.next()){
                 final PlayerData data = new PlayerData();
+                data.setBytes(resultSet.getBinaryStream(1));
 
-                final InputStream var5 = resultSet.getBinaryStream(1);
-                data.setBytes(var5);
+                final IsoPlayer player = new IsoPlayer(isoCell, survivorDesc, 0, 0, 0);
+                player.setName(resultSet.getString(8));
+                player.load(data.m_byteBuffer, IsoWorld.getWorldVersion());
 
-                final IsoPlayer isoPlayer = new IsoPlayer(isoCell, survivorDesc, 0, 0, 0);
-                isoPlayer.setName(resultSet.getString(8));
-                isoPlayer.load(data.m_byteBuffer, IsoWorld.getWorldVersion());
-                isoPlayers.add(isoPlayer);
+                players.add(player);
             }
         } finally {
-            closeQuietly(resultSet);
-            closeQuietly(statement);
-            closeQuietly(connection);
+            closeables.close();
         }
 
-        return isoPlayers;
+        return players;
     }
 
-    private static void closeQuietly(AutoCloseable connection){
-        if(connection != null){
-            try {
-                connection.close();
-            } catch (Exception ignored) {
+    private static final class Closeables {
+        final List<AutoCloseable> all = new LinkedList<>();
 
+        <T extends AutoCloseable> T register(T closeable){
+            all.add(closeable);
+            return closeable;
+        }
+
+        void close(){
+            for (AutoCloseable closeable : all) {
+                try {
+                    closeable.close();
+                } catch (Exception ignored) {
+
+                }
             }
+            all.clear();
         }
     }
 
@@ -103,20 +112,22 @@ public class ZomboidPlayerFinder {
     private static final class PlayerData {
         ByteBuffer m_byteBuffer = ByteBuffer.allocate(32768);
 
-        void setBytes(InputStream var1) throws IOException {
-            ByteBufferOutputStream var2 = new ByteBufferOutputStream(this.m_byteBuffer, true);
-            var2.clear();
-            byte[] var3 = TL_Bytes.get();
+        void setBytes(InputStream is) throws IOException {
+            final ByteBufferOutputStream outputStream = new ByteBufferOutputStream(this.m_byteBuffer, true);
+            outputStream.clear();
+
+            byte[] buffer = TL_Bytes.get();
 
             while(true) {
-                int var4 = var1.read(var3);
-                if (var4 < 1) {
-                    var2.flip();
-                    this.m_byteBuffer = var2.getWrappedBuffer();
+                final int length = is.read(buffer);
+
+                if (length < 1) {
+                    outputStream.flip();
+                    this.m_byteBuffer = outputStream.getWrappedBuffer();
                     return;
                 }
 
-                var2.write(var3, 0, var4);
+                outputStream.write(buffer, 0, length);
             }
         }
     }
