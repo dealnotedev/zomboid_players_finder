@@ -70,7 +70,7 @@ public class ZomboidPlayerFinder {
 
             final ResultSet resultSet = closeables.register(statement.executeQuery());
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 final PlayerData data = new PlayerData();
                 data.setBytes(resultSet.getBinaryStream(1));
 
@@ -90,12 +90,12 @@ public class ZomboidPlayerFinder {
     private static final class Closeables {
         final List<AutoCloseable> all = new LinkedList<>();
 
-        <T extends AutoCloseable> T register(T closeable){
+        <T extends AutoCloseable> T register(T closeable) {
             all.add(closeable);
             return closeable;
         }
 
-        void close(){
+        void close() {
             for (AutoCloseable closeable : all) {
                 try {
                     closeable.close();
@@ -109,6 +109,11 @@ public class ZomboidPlayerFinder {
 
     private static final ThreadLocal<byte[]> TL_Bytes = ThreadLocal.withInitial(() -> new byte[1024]);
 
+    /**
+     * From zomboid server code
+     *
+     * @see zombie.savefile.PlayerDB
+     */
     private static final class PlayerData {
         ByteBuffer m_byteBuffer = ByteBuffer.allocate(32768);
 
@@ -118,7 +123,7 @@ public class ZomboidPlayerFinder {
 
             byte[] buffer = TL_Bytes.get();
 
-            while(true) {
+            while (true) {
                 final int length = is.read(buffer);
 
                 if (length < 1) {
