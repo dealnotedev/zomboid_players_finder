@@ -1,6 +1,5 @@
 package dev.dealnote.players;
 
-import dev.dealnote.zomboid.ZomboidPlayerFinder;
 import zombie.characters.IsoPlayer;
 
 import java.util.List;
