@@ -1,0 +1,4 @@
+<childTags>
+    <!-- This state can have any child state that specifies one or more of these tags in its tags list. -->
+    <!--<tag>aim-sneak</tag>-->
+</childTags>

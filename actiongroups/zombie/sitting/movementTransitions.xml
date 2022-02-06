@@ -1,0 +1,42 @@
+<transitions>
+
+    <transition>
+        <transitionTo>getup</transitionTo>
+        <conditions>
+            <isTrue>alerted</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>getup</transitionTo>
+        <conditions>
+            <isTrue>bMovingNetwork</isTrue>
+            <isTrue>bHasTarget</isTrue>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>getup</transitionTo>
+        <conditions>
+            <isTrue>bMoving</isTrue>
+            <isTrue>bHasTarget</isTrue>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>falldown</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>

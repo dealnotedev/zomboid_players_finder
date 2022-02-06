@@ -1,0 +1,34 @@
+<transitions>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>bFalling</isFalse>
+            <isFalse>fallOnFront</isFalse>
+            <isTrue>bLandAnimFinished</isTrue>
+        </conditions>
+    </transition>
+
+    <!--<transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>-->
+
+    <transition>
+        <transitionTo>falldown</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>fallOnFront</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>

@@ -1,0 +1,8 @@
+<transitions>
+    <transition>
+        <transitionTo>climbFence</transitionTo>
+        <conditions>
+            <eventOccurred>EventClimbFence</eventOccurred>
+        </conditions>
+    </transition>
+</transitions>

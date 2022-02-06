@@ -1,0 +1,17 @@
+<transitions x_include="../defaultTransitions.xml">
+    <transition>
+        <transitionTo>climbwindow</transitionTo>
+        <conditions>
+            <eventOccurred>EventClimbWindow</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>bSmashWindow</isFalse>
+        </conditions>
+    </transition>
+
+</transitions>
+

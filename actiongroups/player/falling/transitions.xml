@@ -1,0 +1,12 @@
+<transitions>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>bFalling</isFalse>
+            <isTrue>bLandAnimFinished</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>
+

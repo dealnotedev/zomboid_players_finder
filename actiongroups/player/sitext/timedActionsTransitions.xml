@@ -1,0 +1,10 @@
+<transitions>
+    <transition>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <isTrue>IsPerformingAnAction</isTrue>
+            <isFalse>isTurning</isFalse>
+        </conditions>
+    </transition>
+</transitions>
+

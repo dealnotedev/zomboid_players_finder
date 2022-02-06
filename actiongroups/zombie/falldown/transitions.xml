@@ -1,0 +1,27 @@
+<transitions>
+<!--
+    <transition>
+        <transitionTo>fakedead</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>bFakeDead</isTrue>
+        </conditions>
+    </transition>
+-->
+<!--    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+-->
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+        </conditions>
+    </transition>
+
+</transitions>
+

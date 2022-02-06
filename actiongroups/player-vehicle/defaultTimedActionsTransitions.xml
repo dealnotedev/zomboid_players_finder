@@ -1,0 +1,10 @@
+<transitions>
+    <transition>
+        <transitionTo>actions</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <isTrue>IsPerformingAnAction</isTrue>
+            <!--<isFalse>sitonground</isFalse>-->
+        </conditions>
+    </transition>
+</transitions>

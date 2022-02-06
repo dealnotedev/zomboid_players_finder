@@ -1,0 +1,52 @@
+<transitions>
+    <transition>
+        <transitionTo>turn</transitionTo>
+        <conditions>
+            <compare a="TurnDirection" op="!=" b=""/>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>bAttack</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>bHasTarget</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>staggerback</transitionTo>
+        <conditions>
+            <isTrue>bStaggerBack</isTrue>
+        </conditions>
+    </transition>
+
+	<transition>
+        <transitionTo>attack-network</transitionTo>
+        <conditions>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>
+

@@ -1,0 +1,11 @@
+<transitions>
+
+    <transition>
+        <transitionTo>staggerback</transitionTo>
+        <!-- <conditions>
+            <eventOccurred>wasHit</eventOccurred>
+        </conditions> -->
+    </transition>
+
+</transitions>
+

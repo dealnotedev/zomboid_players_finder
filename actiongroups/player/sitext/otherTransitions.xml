@@ -1,0 +1,9 @@
+<transitions>
+    <transition>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <eventOccurred>ExtFinishing</eventOccurred>
+        </conditions>
+    </transition>
+</transitions>
+

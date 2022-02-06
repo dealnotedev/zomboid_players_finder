@@ -1,0 +1,10 @@
+<transitions>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <compare a="bSwitchingSeat" op="==" b=""/>
+        </conditions>
+    </transition>
+
+</transitions>

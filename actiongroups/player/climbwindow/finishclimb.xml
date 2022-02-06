@@ -1,0 +1,31 @@
+<transitions>
+    <transition>
+        <transitionTo>climbdownrope</transitionTo>
+        <conditions>
+            <isTrue>ClimbWindowFinished</isTrue>
+            <isTrue>CanClimbDownRope</isTrue>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>falling</transitionTo>
+        <conditions>
+            <isTrue>ClimbWindowFinished</isTrue>
+            <isTrue>bFalling</isTrue>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isTrue>ClimbWindowFinished</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>turning</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <isTrue>isTurningAround</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>

@@ -1,0 +1,47 @@
+<transitions>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+            <equals a="hitreaction" b="Floor"/>
+        </conditions>
+    </transition>
+
+<!--
+    <transition>
+        <transitionTo>fakedead</transitionTo>
+        <conditions>
+            <isTrue>bFakeDead</isTrue>
+        </conditions>
+    </transition>
+-->
+
+    <transition>
+        <transitionTo>getup</transitionTo>
+        <conditions>
+            <isFalse>bCrawling</isFalse>
+            <isFalse>bFakeDead</isFalse>
+            <isFalse>bDead</isFalse>
+            <isFalse>bUnderVehicle</isFalse>
+            <isFalse>bBecomeCrawler</isFalse>
+            <compare a="reanimateTimer" op="&lt;=" b="0.0"/>
+            <isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>getup</transitionTo>
+        <conditions>
+            <isFalse>bCrawling</isFalse>
+            <isFalse>bDead</isFalse>
+            <notEquals a="realState" b="falldown"/>
+            <notEquals a="realState" b="onground"/>
+            <notEquals a="realState" b="staggerback"/>
+            <notEquals a="realState" b="hitreaction"/>
+            <isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>
+

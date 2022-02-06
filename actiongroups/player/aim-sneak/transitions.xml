@@ -1,0 +1,8 @@
+<transitions x_include="../defaultTransitions.xml">
+    <transition>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <isFalse>sneaking</isFalse>
+        </conditions>
+    </transition>
+</transitions>

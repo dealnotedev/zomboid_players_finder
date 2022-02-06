@@ -1,0 +1,9 @@
+<transitions>
+
+    <transition>
+        <!-- immediately transition back to hitreaction -->
+        <transitionTo>hitreaction</transitionTo>
+    </transition>
+
+</transitions>
+

@@ -1,0 +1,21 @@
+<transitions>
+    <transition>
+        <transitionTo>walk</transitionTo>
+        <conditions>
+            <eventOccurred>EventWalk</eventOccurred>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>run</transitionTo>
+        <conditions>
+            <eventOccurred>EventRun</eventOccurred>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>ext</transitionTo>
+        <conditions>
+            <eventOccurred>EventDoExt</eventOccurred>
+        </conditions>
+    </transition>
+</transitions>
+

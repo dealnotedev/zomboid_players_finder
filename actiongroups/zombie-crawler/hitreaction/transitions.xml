@@ -1,0 +1,25 @@
+<transitions>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>hitreaction-hit</transitionTo>
+        <conditions>
+            <eventOccurred>washit</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>
+

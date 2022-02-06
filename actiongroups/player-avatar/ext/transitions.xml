@@ -1,0 +1,20 @@
+<transitions>
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>walk</transitionTo>
+        <conditions>
+            <eventOccurred>EventWalk</eventOccurred>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>run</transitionTo>
+        <conditions>
+            <eventOccurred>EventRun</eventOccurred>
+        </conditions>
+    </transition>
+</transitions>

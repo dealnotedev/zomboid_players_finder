@@ -1,0 +1,79 @@
+<transitions>
+
+    <transition>
+        <transitionTo>face-target</transitionTo>
+        <conditions>
+            <isTrue>bAttack</isTrue>
+            <isFalse>isFacingTarget</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>attack</transitionTo>
+        <conditions>
+            <isTrue>bAttack</isTrue>
+            <isTrue>isFacingTarget</isTrue>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>attack-network</transitionTo>
+        <conditions>
+            <isTrue>bAttack</isTrue>
+            <isTrue>isFacingTarget</isTrue>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>lunge</transitionTo>
+        <conditions>
+            <isTrue>bLunge</isTrue>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>lunge-network</transitionTo>
+        <conditions>
+            <isTrue>bLunge</isTrue>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>bThump</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>falldown</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+            <isFalse>bOnFloor</isFalse>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>staggerback</transitionTo>
+        <conditions>
+            <isTrue>bStaggerBack</isTrue>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>bumped</transitionTo>
+        <conditions>
+            <isTrue>bumped</isTrue>
+        </conditions>
+    </transition>
+</transitions>
+

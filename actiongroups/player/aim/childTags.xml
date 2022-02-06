@@ -1,0 +1,13 @@
+<childTags>
+    <!-- This state can have any child state that specifies one or more of these tags in its tags list. -->
+    <tag>actions</tag>
+    <tag>ranged</tag>
+    <tag>turning</tag>
+    <tag>melee</tag>
+    <tag>maskingleft</tag>
+    <tag>maskingright</tag>
+    <tag>shove</tag>
+    <tag>hitreactionpvp</tag>
+    <tag>hitreactionhit</tag>
+    <!--<tag>aim-sneak</tag>-->
+</childTags>

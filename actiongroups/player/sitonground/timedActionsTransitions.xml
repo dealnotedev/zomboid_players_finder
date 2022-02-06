@@ -1,0 +1,9 @@
+<transitions x_include="../defaultTimedActionsTransitions.xml">
+    <transition>
+        <transitionTo>fishing</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <eventOccurred>EventFishing</eventOccurred>
+        </conditions>
+    </transition>
+</transitions>

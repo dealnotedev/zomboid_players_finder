@@ -1,0 +1,28 @@
+<transitions x_include="../defaultTransitions.xml">
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>movement</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>pressedMovement</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>run</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>pressedMovement</isTrue>
+            <isFalse>aim</isFalse>
+            <isTrue>isRunning</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>
+

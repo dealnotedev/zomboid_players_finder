@@ -1,0 +1,24 @@
+<transitions>
+    <transition>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <isFalse>isTurning</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <isTrue>AttackAnim</isTrue>
+        </conditions>
+    </transition>
+
+    <!--<transition>-->
+        <!--<transitionTo>aim-sneak</transitionTo>-->
+        <!--<asSubstate>true</asSubstate>-->
+        <!--<conditions>-->
+            <!--<isTrue>sneaking</isTrue>-->
+        <!--</conditions>-->
+    <!--</transition>-->
+</transitions>
+

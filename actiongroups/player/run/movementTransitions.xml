@@ -1,0 +1,59 @@
+<transitions>
+    <transition>
+        <transitionTo>falling</transitionTo>
+        <conditions>
+            <isTrue>bFalling</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>isMoving</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>movement</transitionTo>
+        <conditions>
+            <isTrue>isMoving</isTrue>
+            <isFalse>isStrafing</isFalse>
+            <isFalse>isRunning</isFalse>
+            <isFalse>isSprinting</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>strafe</transitionTo>
+        <conditions>
+            <isTrue>isMoving</isTrue>
+            <isTrue>aim</isTrue>
+            <isFalse>isRunning</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>bumped</transitionTo>
+        <conditions>
+            <isTrue>bumped</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>sprint</transitionTo>
+        <conditions>
+            <isTrue>isMoving</isTrue>
+            <isFalse>aim</isFalse>
+            <isTrue>isSprinting</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>turning</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <isTrue>isTurning</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>

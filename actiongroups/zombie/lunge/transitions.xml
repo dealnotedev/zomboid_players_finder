@@ -1,0 +1,146 @@
+<transitions>
+
+    <transition>
+        <transitionTo>climbfence</transitionTo>
+        <conditions>
+            <eventOccurred>EventClimbFence</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>climbwindow</transitionTo>
+        <conditions>
+            <eventOccurred>EventClimbWindow</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>falling</transitionTo>
+        <conditions>
+            <isTrue>bFalling</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>staggerback</transitionTo>
+        <conditions>
+            <isTrue>bStaggerBack</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <!-- this should call pathToLocation(LastTargetSeenX, ...) instead of going idle -->
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>bHasTarget</isFalse>
+            <isTrue>LastTargetSeen</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>falldown</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+            <isFalse>bOnFloor</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <!-- this should call pathToCharacter(target) instead of going idle -->
+        <!-- IFF previous state was PathFindState or WalkTowardState -->
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <compare a="LungeTimer" op="&lt;=" b="0.0"/>
+            <compare a="DistanceToTarget" op="&gt;=" b="0.8"/>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>face-target</transitionTo>
+        <conditions>
+            <isTrue>bAttack</isTrue>
+            <isFalse>isFacingTarget</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>face-target</transitionTo>
+        <conditions>
+            <isTrue>bAttackVehicle</isTrue>
+            <isFalse>isFacingTarget</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>attack</transitionTo>
+        <conditions>
+            <isTrue>bAttack</isTrue>
+            <isTrue>isFacingTarget</isTrue>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>attack-network</transitionTo>
+        <conditions>
+            <isTrue>bAttack</isTrue>
+            <isTrue>isFacingTarget</isTrue>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>attackvehicle</transitionTo>
+        <conditions>
+            <isTrue>bAttackVehicle</isTrue>
+            <isTrue>isFacingTarget</isTrue>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>attackvehicle-network</transitionTo>
+        <conditions>
+            <isTrue>bAttackVehicle</isTrue>
+            <isTrue>isFacingTarget</isTrue>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>thump</transitionTo>
+        <conditions>
+            <isTrue>bThump</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>bHasTarget</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>bumped</transitionTo>
+        <conditions>
+            <isTrue>bumped</isTrue>
+        </conditions>
+    </transition>
+	
+    <transition>
+        <transitionTo>lunge-network</transitionTo>
+        <conditions>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>
+

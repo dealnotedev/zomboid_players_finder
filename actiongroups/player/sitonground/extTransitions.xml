@@ -1,0 +1,10 @@
+<transitions>
+    <transition>
+        <transitionTo>sitext</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <eventOccurred>EventDoExt</eventOccurred>
+            <isFalse>IsPerformingAnAction</isFalse>
+        </conditions>
+    </transition>
+</transitions>

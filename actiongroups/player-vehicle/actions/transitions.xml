@@ -1,0 +1,11 @@
+<transitions x_include="../defaultTransitions.xml">
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <isFalse>IsPerformingAnAction</isFalse>
+        </conditions>
+    </transition>
+
+</transitions>

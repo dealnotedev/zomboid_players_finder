@@ -1,0 +1,41 @@
+<transitions>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>staggerback</transitionTo>
+        <conditions>
+            <isTrue>bStaggerBack</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+            <isTrue>bOnFloor</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>falldown</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+            <isFalse>bOnFloor</isFalse>
+        </conditions>
+    </transition>
+
+</transitions>
+

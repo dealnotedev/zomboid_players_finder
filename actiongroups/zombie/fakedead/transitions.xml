@@ -1,0 +1,28 @@
+<transitions>
+
+    <transition>
+        <transitionTo>fakedead-attack</transitionTo>
+        <conditions>
+            <isTrue>bAttack</isTrue>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>fakedead-attack-network</transitionTo>
+        <conditions>
+            <isTrue>bAttack</isTrue>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <isFalse>bFakeDead</isFalse>
+            <isTrue>bOnFloor</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>
+

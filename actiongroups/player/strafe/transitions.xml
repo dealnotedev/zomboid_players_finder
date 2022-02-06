@@ -1,0 +1,64 @@
+<transitions x_include="../defaultTransitions.xml">
+    <transition>
+        <transitionTo>aim</transitionTo>
+        <conditions>
+            <isTrue>aim</isTrue>
+            <isFalse>isMoving</isFalse>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>isStrafing</isFalse>
+            <isFalse>isMoving</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>movement</transitionTo>
+        <conditions>
+            <isTrue>isMoving</isTrue>
+            <isFalse>isStrafing</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>run</transitionTo>
+        <conditions>
+            <isTrue>isMoving</isTrue>
+            <isFalse>isStrafing</isFalse>
+            <isTrue>isRunning</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>bumped</transitionTo>
+        <conditions>
+            <isTrue>bumped</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>maskingleft</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <notEquals a="LeftHandMask" b=""/>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>maskingright</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <notEquals a="RightHandMask" b=""/>
+        </conditions>
+    </transition>
+
+    <!--<transition>-->
+        <!--<transitionTo>aim-sneak</transitionTo>-->
+        <!--<asSubstate>true</asSubstate>-->
+        <!--<conditions>-->
+            <!--<isTrue>sneaking</isTrue>-->
+        <!--</conditions>-->
+    <!--</transition>-->
+</transitions>

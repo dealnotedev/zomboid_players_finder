@@ -1,0 +1,31 @@
+<transitions x_include="../defaultTimedActionsTransitions.xml">
+
+    <transition>
+        <transitionTo>enter</transitionTo>
+        <conditions>
+            <isTrue>bEnteringVehicle</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>exit</transitionTo>
+        <conditions>
+            <isTrue>bExitingVehicle</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>switchseat</transitionTo>
+        <conditions>
+            <isTrue>bSwitchingSeat</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>aim</transitionTo>
+        <conditions>
+            <isTrue>aim</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>

@@ -1,0 +1,57 @@
+<transitions>
+
+    <transition>
+        <transitionTo>falling</transitionTo>
+        <conditions>
+            <isTrue>bFalling</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <compare a="stateEventDelayTimer" op="&lt;=" b="0.0"/>
+            <isTrue>bKnockedDown</isTrue>
+        </conditions>
+    </transition>
+
+    <!--<transition>-->
+        <!--<transitionTo>attack-network</transitionTo>-->
+        <!--<conditions>-->
+            <!--<compare a="stateEventDelayTimer" op="&lt;=" b="0.0"/>-->
+            <!--<isTrue>bAttack</isTrue>-->
+        <!--</conditions>-->
+    <!--</transition>-->
+
+
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <compare a="stateEventDelayTimer" op="&lt;=" b="0.0"/>
+        </conditions>
+    </transition>
+
+    <!--<transition>-->
+        <!--<transitionTo>HitWhileStaggered</transitionTo>-->
+        <!--<conditions>-->
+            <!--<eventOccurred>wasHit</eventOccurred>-->
+        <!--</conditions>-->
+    <!--</transition>-->
+
+    <!--<transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+			<isFalse>Multiplayer</isFalse>
+        </conditions>
+    </transition>-->
+
+    <transition>
+        <transitionTo>bumped</transitionTo>
+        <conditions>
+            <isTrue>bumped</isTrue>
+        </conditions>
+    </transition>
+</transitions>
+

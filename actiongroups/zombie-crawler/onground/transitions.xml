@@ -1,0 +1,20 @@
+<transitions>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+
+<!--
+    <transition>
+        <transitionTo>fakedead</transitionTo>
+        <conditions>
+            <isTrue>bFakeDead</isTrue>
+        </conditions>
+    </transition>
+-->
+
+</transitions>
+

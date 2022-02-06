@@ -1,0 +1,66 @@
+<transitions>
+
+    <transition>
+        <transitionTo>movement</transitionTo>
+        <conditions>
+            <isTrue>isMoving</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>run</transitionTo>
+        <conditions>
+            <isTrue>isMoving</isTrue>
+            <isFalse>aim</isFalse>
+            <isTrue>isRunning</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>strafe</transitionTo>
+        <conditions>
+            <isTrue>isMoving</isTrue>
+            <isTrue>isStrafing</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>aim</transitionTo>
+        <conditions>
+            <isFalse>IsPerformingAnAction</isFalse>
+            <isTrue>aim</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>sprint</transitionTo>
+        <conditions>
+            <isTrue>isMoving</isTrue>
+            <isFalse>aim</isFalse>
+            <isTrue>isSprinting</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>turning</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <isTrue>isTurning</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>bumped</transitionTo>
+        <conditions>
+            <isTrue>bumped</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>collide</transitionTo>
+        <conditions>
+            <eventOccurred>collideWithWall</eventOccurred>
+        </conditions>
+    </transition>
+
+</transitions>

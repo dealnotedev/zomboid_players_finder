@@ -1,0 +1,14 @@
+<transitions>
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <eventOccurred>EventIdle</eventOccurred>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>walk</transitionTo>
+        <conditions>
+            <eventOccurred>EventWalk</eventOccurred>
+        </conditions>
+    </transition>
+</transitions>

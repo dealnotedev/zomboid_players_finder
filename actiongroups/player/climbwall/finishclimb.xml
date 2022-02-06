@@ -1,0 +1,15 @@
+<transitions>
+    <transition>
+        <transitionTo>climbdownrope</transitionTo>
+        <conditions>
+            <isTrue>ClimbFenceFinished</isTrue>
+            <isTrue>CanClimbDownRope</isTrue>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isTrue>ClimbFenceFinished</isTrue>
+        </conditions>
+    </transition>
+</transitions>

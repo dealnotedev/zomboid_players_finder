@@ -1,0 +1,66 @@
+<transitions>
+    <transition>
+        <transitionTo>climbdownrope</transitionTo>
+        <conditions>
+            <isTrue>ClimbFenceFinished</isTrue>
+            <isTrue>CanClimbDownRope</isTrue>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>falling</transitionTo>
+        <conditions>
+            <isTrue>ClimbFenceFinished</isTrue>
+            <isTrue>bFalling</isTrue>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isTrue>ClimbFenceFinished</isTrue>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>getup</transitionTo>
+        <conditions>
+            <isTrue>ClimbFenceFinished</isTrue>
+            <isTrue>fallOnFront</isTrue>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>run</transitionTo>
+        <conditions>
+            <isTrue>ClimbFenceFinished</isTrue>
+            <isTrue>isMoving</isTrue>
+            <isFalse>aim</isFalse>
+            <isTrue>isRunning</isTrue>
+            <isFalse>fallOnFront</isFalse>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>sprint</transitionTo>
+        <conditions>
+            <isTrue>ClimbFenceFinished</isTrue>
+            <isTrue>isMoving</isTrue>
+            <isFalse>aim</isFalse>
+            <isTrue>isSprinting</isTrue>
+            <isFalse>fallOnFront</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>maskingleft</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <notEquals a="LeftHandMask" b=""/>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>maskingright</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <notEquals a="RightHandMask" b=""/>
+        </conditions>
+    </transition>
+
+</transitions>

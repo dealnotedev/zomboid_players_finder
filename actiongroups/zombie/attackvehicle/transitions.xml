@@ -1,0 +1,72 @@
+<transitions>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>staggerback</transitionTo>
+        <conditions>
+            <isTrue>bStaggerBack</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>bAttackVehicle</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>bHasTarget</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isTrue>bMoving</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isTrue>bPathfind</isTrue>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>falldown</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+            <isFalse>bOnFloor</isFalse>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>bumped</transitionTo>
+        <conditions>
+            <isTrue>bumped</isTrue>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>attackvehicle-network</transitionTo>
+        <conditions>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+</transitions>
+

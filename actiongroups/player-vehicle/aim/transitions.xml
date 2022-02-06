@@ -1,0 +1,55 @@
+<transitions>
+
+    <transition>
+        <transitionTo>melee</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <isTrue>initiateAttack</isTrue>
+            <isFalse>rangedWeapon</isFalse>
+            <notEquals a="Weapon" b=""/>
+            <isFalse>bDoShove</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>shove</transitionTo>
+        <conditions>
+            <isTrue>initiateAttack</isTrue>
+            <isTrue>bDoShove</isTrue>
+            <isFalse>AttackAnim</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>ranged</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <isTrue>initiateAttack</isTrue>
+            <isTrue>rangedWeapon</isTrue>
+            <isFalse>bDoShove</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>aim</isFalse>
+            <isFalse>AttackAnim</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>exit</transitionTo>
+        <conditions>
+            <isTrue>bExitingVehicle</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>switchseat</transitionTo>
+        <conditions>
+            <isTrue>bSwitchingSeat</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>

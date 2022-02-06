@@ -1,0 +1,107 @@
+<transitions>
+
+    <transition>
+        <transitionTo>hitreaction-hit</transitionTo>
+        <conditions>
+            <eventOccurred>washit</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>staggerback</transitionTo>
+        <conditions>
+            <isTrue>bStaggerBack</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>bKnockedDown</isTrue>
+            <isFalse>bDead</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>face-target</transitionTo>
+        <conditions>
+            <eventNotOccurred>washit</eventNotOccurred>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>bAttack</isTrue>
+            <isFalse>isFacingTarget</isFalse>
+            <isFalse>bKnockedDown</isFalse>
+        </conditions>
+    </transition>
+
+    <!-- if knocked down, we trigger get up -->
+    <transition>
+        <transitionTo>attack</transitionTo>
+        <conditions>
+            <eventNotOccurred>washit</eventNotOccurred>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>bAttack</isTrue>
+            <isTrue>isFacingTarget</isTrue>
+            <isFalse>bKnockedDown</isFalse>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>attack-network</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimLooped</eventOccurred>
+            <isTrue>bAttack</isTrue>
+            <isTrue>isFacingTarget</isTrue>
+            <isFalse>bKnockedDown</isFalse>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <!-- if knocked down, we trigger get up -->
+    <transition>
+        <transitionTo>lunge</transitionTo>
+        <conditions>
+            <eventNotOccurred>washit</eventNotOccurred>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>bLunge</isTrue>
+            <isFalse>bKnockedDown</isFalse>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>lunge-network</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimLooped</eventOccurred>
+            <isTrue>bLunge</isTrue>
+            <isFalse>bKnockedDown</isFalse>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>falldown</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+            <isFalse>bOnFloor</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+            <isTrue>bOnFloor</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+        </conditions>
+    </transition>
+
+</transitions>
+

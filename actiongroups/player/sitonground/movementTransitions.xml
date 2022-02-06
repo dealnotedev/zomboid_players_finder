@@ -1,0 +1,15 @@
+<transitions x_include="../defaultTransitions.xml">
+    <transition>
+        <transitionTo>getup</transitionTo>
+        <conditions>
+            <isTrue>forceGetUp</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>getup</transitionTo>
+        <conditions>
+            <isTrue>isMoving</isTrue>
+        </conditions>
+    </transition>
+</transitions>

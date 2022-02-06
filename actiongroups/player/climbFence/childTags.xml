@@ -1,0 +1,5 @@
+<childTags>
+    <!-- This state can have any child state that specifies one or more of these tags in its tags list. -->
+    <tag>maskingleft</tag>
+    <tag>maskingright</tag>
+</childTags>

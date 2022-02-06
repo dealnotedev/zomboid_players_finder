@@ -1,0 +1,132 @@
+<transitions>
+
+    <transition>
+        <transitionTo>staggerback</transitionTo>
+        <conditions>
+            <isTrue>bStaggerBack</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <isTrue>BumpAnimFinished</isTrue>
+            <isTrue>bKnockedDown</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>face-target</transitionTo>
+        <conditions>
+            <isTrue>BumpAnimFinished</isTrue>
+            <isTrue>bAttack</isTrue>
+            <isFalse>isFacingTarget</isFalse>
+        </conditions>
+    </transition>
+
+    <!-- if knocked down, we trigger get up -->
+    <transition>
+        <transitionTo>attack</transitionTo>
+        <conditions>
+            <isTrue>BumpAnimFinished</isTrue>
+            <isTrue>bAttack</isTrue>
+            <isTrue>isFacingTarget</isTrue>
+            <isFalse>bKnockedDown</isFalse>
+            <isFalse>bOnFloor</isFalse>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>attack-network</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimLooped</eventOccurred>
+            <isTrue>bAttack</isTrue>
+            <isTrue>isFacingTarget</isTrue>
+            <isFalse>bKnockedDown</isFalse>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <!-- if knocked down, we trigger get up -->
+    <transition>
+        <transitionTo>lunge</transitionTo>
+        <conditions>
+            <isTrue>BumpAnimFinished</isTrue>
+            <isTrue>bLunge</isTrue>
+            <isFalse>bKnockedDown</isFalse>
+            <isFalse>bOnFloor</isFalse>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>lunge-network</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimLooped</eventOccurred>
+            <isTrue>bLunge</isTrue>
+            <isFalse>bKnockedDown</isFalse>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>falldown</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+            <isFalse>bOnFloor</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>walktoward</transitionTo>
+        <conditions>
+            <isTrue>BumpAnimFinished</isTrue>
+            <isTrue>bMoving</isTrue>
+            <isFalse>bPathfind</isFalse>
+            <isFalse>bOnFloor</isFalse>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>walktoward-network</transitionTo>
+        <conditions>
+            <isTrue>bMovingNetwork</isTrue>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>pathfind</transitionTo>
+        <conditions>
+            <isTrue>bPathfind</isTrue>
+            <isFalse>bOnFloor</isFalse>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isTrue>BumpAnimFinished</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>getup</transitionTo>
+        <conditions>
+            <isTrue>BumpAnimFinished</isTrue>
+            <isTrue>SprinterTripped</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>

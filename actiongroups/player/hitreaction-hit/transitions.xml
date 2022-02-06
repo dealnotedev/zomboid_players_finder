@@ -1,0 +1,9 @@
+<transitions>
+
+    <transition>
+        <!-- immediately transition back to hitreactionpvp -->
+        <transitionTo>hitreactionpvp</transitionTo>
+    </transition>
+
+</transitions>
+

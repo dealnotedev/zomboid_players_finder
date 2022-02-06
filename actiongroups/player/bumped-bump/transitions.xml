@@ -1,0 +1,9 @@
+<transitions>
+
+    <transition>
+        <!-- immediately transition back to bumped -->
+        <transitionTo>bumped</transitionTo>
+    </transition>
+
+</transitions>
+

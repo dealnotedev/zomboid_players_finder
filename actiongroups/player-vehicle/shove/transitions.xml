@@ -1,0 +1,18 @@
+<transitions x_include="../defaultTransitions.xml">
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>aim</transitionTo>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <isTrue>aim</isTrue>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+        </conditions>
+    </transition>
+</transitions>

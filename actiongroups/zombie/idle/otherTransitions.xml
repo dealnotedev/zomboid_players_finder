@@ -1,0 +1,171 @@
+<transitions>
+
+    <transition>
+        <transitionTo>climbfence</transitionTo>
+        <conditions>
+            <eventOccurred>EventClimbFence</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>climbwindow</transitionTo>
+        <conditions>
+            <eventOccurred>EventClimbWindow</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>staggerback</transitionTo>
+        <conditions>
+            <isTrue>bStaggerBack</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>face-target</transitionTo>
+        <conditions>
+            <isTrue>bAttack</isTrue>
+            <isFalse>isFacingTarget</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>face-target</transitionTo>
+        <conditions>
+            <isTrue>bAttackVehicle</isTrue>
+            <isFalse>isFacingTarget</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>attack</transitionTo>
+        <conditions>
+            <isTrue>bAttack</isTrue>
+            <isTrue>isFacingTarget</isTrue>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>attack-network</transitionTo>
+        <conditions>
+            <isTrue>bAttack</isTrue>
+            <isTrue>isFacingTarget</isTrue>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>attackvehicle</transitionTo>
+        <conditions>
+            <isTrue>bAttackVehicle</isTrue>
+            <isTrue>isFacingTarget</isTrue>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>attackvehicle-network</transitionTo>
+        <conditions>
+            <isTrue>bAttackVehicle</isTrue>
+            <isTrue>isFacingTarget</isTrue>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <!-- zombie-crawler/getup -> zombie/getup -->
+    <transition>
+        <transitionTo>getup</transitionTo>
+        <conditions>
+            <isTrue>bOnFloor</isTrue>
+            <isTrue>bGetUpFromCrawl</isTrue>
+            <isTrue>bGetUpFromCrawl</isTrue>
+            <isTrue>bGetUpFromCrawl</isTrue>
+            <isTrue>bGetUpFromCrawl</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>lunge</transitionTo>
+        <conditions>
+            <isTrue>bLunge</isTrue>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+    <transition>
+        <transitionTo>lunge-network</transitionTo>
+        <conditions>
+            <isTrue>bLunge</isTrue>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>thump</transitionTo>
+        <conditions>
+            <isTrue>bThump</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>falldown</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+            <isFalse>bOnFloor</isFalse>
+        </conditions>
+    </transition>
+
+    <!-- Normally the "falldown" state transitions to "fakedead" state. -->
+    <!-- This handles zombies being loaded already fake-dead. -->
+<!--
+    <transition>
+        <transitionTo>fakedead</transitionTo>
+        <conditions>
+            <isTrue>bFakeDead</isTrue>
+        </conditions>
+    </transition>
+-->
+
+    <!-- Normally the "falldown" state transitions to "onground" state. -->
+    <!-- This handles zombies being already on the ground, like newly-reanimated corpses. -->
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <isTrue>bOnFloor</isTrue>
+            <isTrue>bOnFloor</isTrue>
+            <isTrue>bOnFloor</isTrue>
+            <isTrue>bOnFloor</isTrue>
+            <isTrue>bOnFloor</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>eatbody</transitionTo>
+        <conditions>
+            <isTrue>bEatBodyTarget</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>bumped</transitionTo>
+        <conditions>
+            <isTrue>bumped</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>sitting</transitionTo>
+        <conditions>
+            <isTrue>issitting</isTrue>
+        </conditions>
+    </transition>
+</transitions>
+

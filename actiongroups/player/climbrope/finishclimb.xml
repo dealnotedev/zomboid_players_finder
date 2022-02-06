@@ -1,0 +1,26 @@
+<transitions>
+    <transition>
+        <transitionTo>climbFence</transitionTo>
+        <conditions>
+            <eventOccurred>EventClimbFence</eventOccurred>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>climbdownrope</transitionTo>
+        <conditions>
+            <eventOccurred>EventClimbDownRope</eventOccurred>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <compare a="ClimbRope" op="==" b=""/>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>climbwindow</transitionTo>
+        <conditions>
+            <eventOccurred>EventClimbWindow</eventOccurred>
+        </conditions>
+    </transition>
+</transitions>

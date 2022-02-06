@@ -1,0 +1,7 @@
+<childTags>
+    <!-- This state can have any child state that specifies one or more of these tags in its tags list. -->
+    <tag>actions</tag>
+    <tag>ranged</tag>
+    <tag>melee</tag>
+    <tag>shove</tag>
+</childTags>

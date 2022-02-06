@@ -1,0 +1,30 @@
+<transitions>
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>bDead</isTrue>
+        </conditions>
+    </transition>
+	<transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+            <isTrue>BumpDone</isTrue>
+        </conditions>
+    </transition>
+	<transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+            <isTrue>sitonground</isTrue>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>getup</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isFalse>bDead</isFalse>
+        </conditions>
+    </transition>
+</transitions>

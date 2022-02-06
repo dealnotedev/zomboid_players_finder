@@ -1,0 +1,39 @@
+<transitions x_include="../defaultTransitions.xml">
+    <transition>
+        <transitionTo>movement</transitionTo>
+        <conditions>
+            <isFalse>input(run)</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>maskingleft</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <notEquals a="LeftHandMask" b=""/>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>maskingright</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <notEquals a="RightHandMask" b=""/>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>shove</transitionTo>
+        <conditions>
+            <isTrue>initiateAttack</isTrue>
+            <isTrue>bDoShove</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>climbwall</transitionTo>
+        <conditions>
+            <eventOccurred>EventClimbWall</eventOccurred>
+        </conditions>
+    </transition>
+</transitions>

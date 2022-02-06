@@ -1,0 +1,8 @@
+<transitions x_include="../defaultTransitions.xml">
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isTrue>FitnessFinished</isTrue>
+        </conditions>
+    </transition>
+</transitions>

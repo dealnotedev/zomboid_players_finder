@@ -1,0 +1,43 @@
+<transitions>
+
+    <transition>
+        <transitionTo>turnalerted</transitionTo>
+        <conditions>
+            <isTrue>alerted</isTrue>
+            <isFalse>issitting</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>walktoward</transitionTo>
+        <conditions>
+            <isFalse>alerted</isFalse>
+            <isTrue>bMoving</isTrue>
+            <isFalse>bPathfind</isFalse>
+            <isFalse>issitting</isFalse>
+            <isFalse>bGetUpFromCrawl</isFalse>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+    <transition>
+        <transitionTo>walktoward-network</transitionTo>
+        <conditions>
+            <isFalse>alerted</isFalse>
+            <isTrue>bMovingNetwork</isTrue>
+            <isFalse>issitting</isFalse>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>pathfind</transitionTo>
+        <conditions>
+            <isTrue>bPathfind</isTrue>
+            <isFalse>issitting</isFalse>
+            <isFalse>bGetUpFromCrawl</isFalse>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+
+</transitions>

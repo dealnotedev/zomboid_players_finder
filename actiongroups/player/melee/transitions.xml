@@ -1,0 +1,38 @@
+<transitions x_include="../defaultTransitions.xml">
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isFalse>AttackAnim</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>aim</transitionTo>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <isTrue>aim</isTrue>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isFalse>AttackAnim</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>strafe</transitionTo>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <isTrue>isStrafing</isTrue>
+            <isTrue>isMoving</isTrue>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isFalse>AttackAnim</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>bumped</transitionTo>
+        <conditions>
+            <isTrue>bumped</isTrue>
+        </conditions>
+    </transition>
+</transitions>

@@ -1,0 +1,98 @@
+<transitions>
+    <transition>
+        <transitionTo>falling</transitionTo>
+        <conditions>
+            <isTrue>bFalling</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>collide</transitionTo>
+        <conditions>
+            <eventOccurred>collideWithWall</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>isMoving</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>movement</transitionTo>
+        <conditions>
+            <isTrue>isMoving</isTrue>
+            <isFalse>aim</isFalse>
+            <isFalse>isRunning</isFalse>
+            <isFalse>isSprinting</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>run</transitionTo>
+        <conditions>
+            <isTrue>isMoving</isTrue>
+            <isFalse>aim</isFalse>
+            <isTrue>isRunning</isTrue>
+            <isFalse>isSprinting</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>strafe</transitionTo>
+        <conditions>
+            <isTrue>isMoving</isTrue>
+            <isTrue>isStrafing</isTrue>
+            <isFalse>isRunning</isFalse>
+            <isFalse>isSprinting</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>bumped</transitionTo>
+        <conditions>
+            <isTrue>bumped</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>melee</transitionTo>
+        <conditions>
+            <eventOccurred>ChargeSpearConnect</eventOccurred>
+        </conditions>
+    </transition>
+
+
+    <transition>
+        <transitionTo>maskingleft</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <notEquals a="LeftHandMask" b=""/>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>maskingright</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <notEquals a="RightHandMask" b=""/>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>shove</transitionTo>
+        <conditions>
+            <isTrue>initiateAttack</isTrue>
+            <isTrue>bDoShove</isTrue>
+        </conditions>
+    </transition>
+</transitions>

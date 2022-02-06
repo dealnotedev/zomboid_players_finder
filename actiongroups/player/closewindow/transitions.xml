@@ -1,0 +1,16 @@
+<transitions>
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>bCloseWindow</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+</transitions>
+

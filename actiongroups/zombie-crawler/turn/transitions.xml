@@ -1,0 +1,25 @@
+<transitions>
+
+    <transition>
+        <transitionOut>True</transitionOut>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <compare a="TurnDirection" op="==" b=""/>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+        </conditions>
+    </transition>
+</transitions>
+

@@ -1,0 +1,66 @@
+<transitions x_include="../defaultTransitions.xml">
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isFalse>ShoveAnim</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>aim</transitionTo>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>aim</isTrue>
+            <isFalse>ShoveAnim</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>strafe</transitionTo>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>isStrafing</isTrue>
+            <isTrue>isMoving</isTrue>
+            <isFalse>ShoveAnim</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>movement</transitionTo>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>isMoving</isTrue>
+            <isFalse>ShoveAnim</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>bumped</transitionTo>
+        <conditions>
+            <isTrue>bumped</isTrue>
+        </conditions>
+    </transition>
+
+
+    <transition>
+        <transitionTo>maskingleft</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <notEquals a="LeftHandMask" b=""/>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>maskingright</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <notEquals a="RightHandMask" b=""/>
+        </conditions>
+    </transition>
+
+</transitions>

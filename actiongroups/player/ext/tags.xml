@@ -1,0 +1,4 @@
+<tags>
+    <!-- This state can be a child of any parent that specifies one or more of these tags in its childTags list. -->
+    <tag>ext</tag>
+</tags>

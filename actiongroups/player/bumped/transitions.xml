@@ -1,0 +1,75 @@
+<transitions>
+
+    <transition>
+        <transitionTo>bumped-bump</transitionTo>
+        <conditions>
+            <eventOccurred>wasbumped</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>getup</transitionTo>
+        <conditions>
+            <isTrue>BumpFallAnimFinished</isTrue>
+            <isTrue>BumpFall</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>movement</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>isMoving</isTrue>
+            <isFalse>isRunning</isFalse>
+            <isFalse>aim</isFalse>
+            <isFalse>BumpFall</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>run</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>isMoving</isTrue>
+            <isTrue>isRunning</isTrue>
+            <isFalse>aim</isFalse>
+            <isFalse>BumpFall</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>strafe</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>isMoving</isTrue>
+            <isTrue>isStrafing</isTrue>
+            <isFalse>BumpFall</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>aim</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isTrue>aim</isTrue>
+            <isFalse>BumpFall</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <eventOccurred>ActiveAnimFinishing</eventOccurred>
+            <isFalse>BumpFall</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+            <isFalse>BumpFall</isFalse>
+        </conditions>
+    </transition>
+
+</transitions>

@@ -1,0 +1,130 @@
+<transitions>
+    <transition>
+        <transitionTo>turnalerted</transitionTo>
+        <conditions>
+            <isFalse>hashitreaction</isFalse>
+            <isTrue>alerted</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>lunge</transitionTo>
+        <conditions>
+            <isTrue>bLunge</isTrue>
+			<isFalse>bClient</isFalse>
+            <isFalse>bGetUpFromCrawl</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>lunge-network</transitionTo>
+        <conditions>
+            <isTrue>bLunge</isTrue>
+			<isTrue>bClient</isTrue>
+			<isFalse>bGetUpFromCrawl</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>falling</transitionTo>
+        <conditions>
+            <isTrue>bFalling</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>bPathfind</isFalse>
+            <isFalse>bMoving</isFalse>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>bMovingNetwork</isFalse>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>getdown</transitionTo>
+        <conditions>
+            <isTrue>ShouldBeCrawling</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>getup</transitionTo>
+        <conditions>
+            <isTrue>bGetUpFromCrawl</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>walktoward</transitionTo>
+        <conditions>
+            <isFalse>bPathfind</isFalse>
+            <isTrue>bMoving</isTrue>
+			<isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+	
+	<transition>
+        <transitionTo>walktoward-network</transitionTo>
+        <conditions>
+            <isTrue>bMovingNetwork</isTrue>
+			<isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>climbfence</transitionTo>
+        <conditions>
+            <eventOccurred>EventClimbFence</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>climbwindow</transitionTo>
+        <conditions>
+            <eventOccurred>EventClimbWindow</eventOccurred>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>thump</transitionTo>
+        <conditions>
+            <isTrue>bThump</isTrue>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>falldown</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+            <isFalse>bOnFloor</isFalse>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>staggerback</transitionTo>
+        <conditions>
+            <isTrue>bStaggerBack</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>bumped</transitionTo>
+        <conditions>
+            <isTrue>bumped</isTrue>
+        </conditions>
+    </transition>
+</transitions>

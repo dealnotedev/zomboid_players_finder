@@ -1,0 +1,33 @@
+<transitions>
+
+    <transition>
+        <transitionTo>melee</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <isTrue>initiateAttack</isTrue>
+            <isFalse>rangedWeapon</isFalse>
+            <isFalse>bDoShove</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>shove</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <isTrue>initiateAttack</isTrue>
+            <isTrue>bDoShove</isTrue>
+            <isFalse>AttackAnim</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>ranged</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <isTrue>initiateAttack</isTrue>
+            <isTrue>rangedWeapon</isTrue>
+            <isFalse>bDoShove</isFalse>
+        </conditions>
+    </transition>
+
+</transitions>

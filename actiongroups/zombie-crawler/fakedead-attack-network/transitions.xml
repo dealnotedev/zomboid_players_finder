@@ -1,0 +1,12 @@
+<transitions>
+
+    <!-- When the attack animation ends, the zombie becomes a crawler -->
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+        </conditions>
+    </transition>
+
+</transitions>
+

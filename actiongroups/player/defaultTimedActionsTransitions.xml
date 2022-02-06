@@ -1,0 +1,12 @@
+<transitions>
+    <transition>
+        <transitionTo>actions</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <isTrue>IsPerformingAnAction</isTrue>
+            <!--<isFalse>sitonground</isFalse>-->
+            <isFalse>isTurning</isFalse>
+            <!--<compare a="twist" op="=" b="0"/>-->
+        </conditions>
+    </transition>
+</transitions>

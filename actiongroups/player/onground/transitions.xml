@@ -1,0 +1,18 @@
+<transitions>
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+			<equals a="hitreaction" b="Floor"/>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>getup</transitionTo>
+        <conditions>
+            <isFalse>bDead</isFalse>
+            <isFalse>bUnderVehicle</isFalse>
+            <compare a="reanimateTimer" op="&lt;=" b="0.0"/>
+        </conditions>
+    </transition>
+</transitions>
+

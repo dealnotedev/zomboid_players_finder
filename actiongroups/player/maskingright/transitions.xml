@@ -1,0 +1,10 @@
+<transitions>
+
+    <transition>
+        <transitionOut>true</transitionOut>
+        <conditions>
+            <equals a="RightHandMask" b=""/>
+        </conditions>
+    </transition>
+
+</transitions>

@@ -1,0 +1,17 @@
+<transitions x_include="../defaultTransitions.xml">
+    <transition>
+        <transitionTo>slowidleblend</transitionTo>
+        <conditions>
+            <isTrue>requiresSlowIdleBlend</isTrue>
+            <isFalse>IsPerformingAnAction</isFalse>
+        </conditions>
+    </transition>
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <transitionOut>True</transitionOut>
+        <conditions>
+            <isFalse>IsPerformingAnAction</isFalse>
+        </conditions>
+    </transition>
+
+</transitions>

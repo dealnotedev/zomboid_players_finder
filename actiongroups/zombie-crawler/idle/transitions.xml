@@ -1,0 +1,94 @@
+<transitions>
+
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <isTrue>bDead</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>onground</transitionTo>
+        <conditions>
+            <isTrue>bFakeDead</isTrue>
+            <isTrue>bFakeDead</isTrue>
+            <isTrue>bFakeDead</isTrue>
+            <isTrue>bFakeDead</isTrue>
+            <isTrue>bFakeDead</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>reanimate</transitionTo>
+        <conditions>
+            <isTrue>bReanimate</isTrue>
+            <isTrue>bReanimate</isTrue>
+            <isTrue>bReanimate</isTrue>
+            <isTrue>bReanimate</isTrue>
+            <isTrue>bReanimate</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>walktoward</transitionTo>
+        <conditions>
+            <isTrue>bMoving</isTrue>
+            <isFalse>bPathfind</isFalse>
+            <isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>walktoward-network</transitionTo>
+        <conditions>
+            <isTrue>bMovingNetwork</isTrue>
+            <isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>pathfind</transitionTo>
+        <conditions>
+            <isTrue>bPathfind</isTrue>
+            <isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>attack</transitionTo>
+        <conditions>
+            <isTrue>bAttack</isTrue>
+            <isFalse>bClient</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>attack-network</transitionTo>
+        <conditions>
+            <isTrue>bAttack</isTrue>
+            <isTrue>bClient</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>turn</transitionTo>
+        <conditions>
+            <compare a="TurnDirection" op="!=" b=""/>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>hitreaction</transitionTo>
+        <conditions>
+            <isTrue>hashitreaction</isTrue>
+        </conditions>
+    </transition>
+<!--
+    <transition>
+        <transitionTo>fakedead</transitionTo>
+        <conditions>
+            <isTrue>bFakeDead</isTrue>
+        </conditions>
+    </transition>
+-->
+</transitions>

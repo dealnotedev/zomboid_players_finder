@@ -1,0 +1,89 @@
+<transitions x_include="../defaultTransitions.xml">
+    <transition>
+        <transitionTo>melee</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <isTrue>initiateAttack</isTrue>
+            <isFalse>rangedWeapon</isFalse>
+            <notEquals a="Weapon" b=""/>
+            <isFalse>bDoShove</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>shove</transitionTo>
+        <conditions>
+            <isTrue>initiateAttack</isTrue>
+            <isTrue>bDoShove</isTrue>
+            <isFalse>AttackAnim</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>ranged</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <isTrue>initiateAttack</isTrue>
+            <isTrue>rangedWeapon</isTrue>
+            <isFalse>bDoShove</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>strafe</transitionTo>
+        <conditions>
+            <isTrue>isMoving</isTrue>
+            <isTrue>isStrafing</isTrue>
+            <!--<isFalse>AttackAnim</isFalse>-->
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>idle</transitionTo>
+        <conditions>
+            <isFalse>aim</isFalse>
+            <isFalse>AttackAnim</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>turning</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <isTrue>isTurning</isTrue>
+            <isFalse>AttackAnim</isFalse>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>bumped</transitionTo>
+        <conditions>
+            <isTrue>bumped</isTrue>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>maskingleft</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <notEquals a="LeftHandMask" b=""/>
+        </conditions>
+    </transition>
+
+    <transition>
+        <transitionTo>maskingright</transitionTo>
+        <asSubstate>true</asSubstate>
+        <conditions>
+            <notEquals a="RightHandMask" b=""/>
+        </conditions>
+    </transition>
+
+    <!--<transition>-->
+        <!--<transitionTo>aim-sneak</transitionTo>-->
+        <!--<asSubstate>true</asSubstate>-->
+        <!--<conditions>-->
+            <!--<isTrue>sneaking</isTrue>-->
+        <!--</conditions>-->
+    <!--</transition>-->
+
+</transitions>
