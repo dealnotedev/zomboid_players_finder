@@ -1,9 +1,0 @@
-<transitions>
-    <transition>
-        <transitionOut>True</transitionOut>
-        <conditions>
-            <isFalse>EmotePlaying</isFalse>
-        </conditions>
-    </transition>
-</transitions>
-
